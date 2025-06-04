@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level Up - The System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1>📈 Welcome to The System</h1>
+    <div id="profile">
+      <h2>🧑 System Head: You</h2>
+      <p>Rank: <span id="rank">E-Rank</span></p>
+      <p>XP: <span id="xp">0</span> / <span id="nextXp">100</span></p>
+    </div>
+    <div id="challenge">
+      <h2>🔥 Today's Challenge</h2>
+      <p id="challengeText">Do 10 push-ups</p>
+      <button onclick="completeChallenge()">✅ Complete Challenge</button>
+    </div>
+    <div id="stats">
+      <h2>📊 Stats</h2>
+      <ul>
+        <li>Strength: <span id="strength">10</span></li>
+        <li>Agility: <span id="agility">10</span></li>
+        <li>Stamina: <span id="stamina">10</span></li>
+        <li>Intelligence: <span id="intelligence">10</span></li>
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
