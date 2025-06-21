@@ -3,33 +3,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Level Up - The System</title>
+  <title>The System - Status</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="app-container">
-    <h1>📈 Welcome to The System</h1>
-    <div id="profile">
-      <h2>🧑 System Head: You</h2>
-      <p>Rank: <span id="rank">E-Rank</span></p>
-      <p>XP: <span id="xp">0</span> / <span id="nextXp">100</span></p>
+  <div class="container">
+    <h1 class="status-title">THE SYSTEM</h1>
+    <div class="level-box">
+      <span class="level-number" id="level">15</span>
+      <span class="level-label">LEVEL</span>
     </div>
-    <div id="challenge">
-      <h2>🔥 Today's Challenge</h2>
-      <p id="challengeText">Do 10 push-ups</p>
-      <button onclick="completeChallenge()">✅ Complete Challenge</button>
+    <div class="info-box">
+      <p><span class="label">JOB:</span> Human</p>
+      <p><span class="label">TITLE:</span> HR</p>
+      <p class="description">Low human strength.</p>
     </div>
-    <div id="stats">
-      <h2>📊 Stats</h2>
-      <ul>
-        <li>Strength: <span id="strength">10</span></li>
-        <li>Agility: <span id="agility">10</span></li>
-        <li>Stamina: <span id="stamina">10</span></li>
-        <li>Intelligence: <span id="intelligence">10</span></li>
-      </ul>
+    <div class="stats-box">
+      <div><span>💪 STR:</span> <span id="str">17</span></div>
+      <div><span>🧠 INT:</span> <span id="int">11</span></div>
+      <div><span>🏃 AGI:</span> <span id="agi">12</span></div>
+      <div><span>❤️ VIT:</span> <span id="vit">16</span></div>
+    </div>
+    <div class="nav">
+      <a href="quests.html">📜</a>
+      <a href="trainer.html">🤖</a>
+      <a href="leaderboard.html">🏆</a>
     </div>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
