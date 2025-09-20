@@ -1,35 +1,142 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The System - Status</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Seejal 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, #ffe6f2, #fff0f5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      max-width: 400px;
+      width: 90%;
+    }
+    h1 {
+      color: #e91e63;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+    .countdown {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .time-box {
+      background: #fff;
+      border: 2px solid #e91e63;
+      border-radius: 12px;
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px 5px;
+    }
+    .time-box h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #e91e63;
+    }
+    .time-box small {
+      font-size: 0.8rem;
+      color: #555;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #7b1fa2;
+    }
+    .qr-section {
+      margin-top: 20px;
+    }
+    .qr-section img {
+      margin-top: 10px;
+      width: 180px;
+      height: 180px;
+      border: 3px solid #e91e63;
+      border-radius: 12px;
+      padding: 5px;
+      box-shadow: 0 0 15px rgba(233, 30, 99, 0.4);
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="status-title">THE SYSTEM</h1>
-    <div class="level-box">
-      <span class="level-number" id="level">15</span>
-      <span class="level-label">LEVEL</span>
+    <h1>Seejal 🎂 Your Special Day is Almost Here 💕</h1>
+
+    <div class="countdown">
+      <div class="time-box">
+        <h2 id="days">0</h2>
+        <small>Days</small>
+      </div>
+      <div class="time-box">
+        <h2 id="hours">0</h2>
+        <small>Hours</small>
+      </div>
+      <div class="time-box">
+        <h2 id="minutes">0</h2>
+        <small>Minutes</small>
+      </div>
+      <div class="time-box">
+        <h2 id="seconds">0</h2>
+        <small>Seconds</small>
+      </div>
     </div>
-    <div class="info-box">
-      <p><span class="label">JOB:</span> Human</p>
-      <p><span class="label">TITLE:</span> HR</p>
-      <p class="description">Low human strength.</p>
-    </div>
-    <div class="stats-box">
-      <div><span>💪 STR:</span> <span id="str">17</span></div>
-      <div><span>🧠 INT:</span> <span id="int">11</span></div>
-      <div><span>🏃 AGI:</span> <span id="agi">12</span></div>
-      <div><span>❤️ VIT:</span> <span id="vit">16</span></div>
-    </div>
-    <div class="nav">
-      <a href="quests.html">📜</a>
-      <a href="trainer.html">🤖</a>
-      <a href="leaderboard.html">🏆</a>
+
+    <p class="message">Just a little more... 🎁 A small gift for my favorite person ❤️</p>
+
+    <div class="qr-section">
+      <p>Scan this QR to revisit 🎉</p>
+      <img id="qrCode" src="" alt="QR Code" />
     </div>
   </div>
+
+  <script>
+    const birthday = new Date("2025-09-25 00:00:00").getTime();
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = birthday - now;
+
+      if (diff <= 0) {
+        document.querySelector(".countdown").innerHTML =
+          "<h2>🎉 Happy Birthday Seejal! 🎂</h2>";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.innerText = days;
+      hoursEl.innerText = hours;
+      minutesEl.innerText = minutes;
+      secondsEl.innerText = seconds;
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+
+    const qrImg = document.getElementById("qrCode");
+    qrImg.src =
+      "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=" +
+      encodeURIComponent(window.location.href);
+  </script>
 </body>
 </html>
